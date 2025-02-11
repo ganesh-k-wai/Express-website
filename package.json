@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodejs": "^0.0.0",
+    "nodemon": "^3.1.9"
+  },
+  "name": "express-website",
+  "version": "1.0.0",
+  "description": "all good ",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ganesh-k-wai/Express-website.git"
+  },
+  "author": "ganesh kadam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ganesh-k-wai/Express-website/issues"
+  },
+  "homepage": "https://github.com/ganesh-k-wai/Express-website#readme"
+}
