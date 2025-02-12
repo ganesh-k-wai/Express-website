@@ -51,7 +51,7 @@
       </div>
       <button
         class="carousel-control-prev"
-        type="button"
+        required type="button"
         data-bs-target="#carouselExampleAutoplaying"
         data-bs-slide="prev"
       >
@@ -60,7 +60,7 @@
       </button>
       <button
         class="carousel-control-next"
-        type="button"
+        required type="button"
         data-bs-target="#carouselExampleAutoplaying"
         data-bs-slide="next"
       >
@@ -68,6 +68,98 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
+
+    <div class="container my-5 border rounded-5">
+    <div class="row d-flex justify-content-center my-5">
+      <div class="col-4 contactname">
+     <div class="text-center mb-5">
+        <h1   >
+          Admission form
+        </h1>
+      </div>
+      </div>
+    </div>
+
+    <!-- Admission Form Start -->
+  <form action="" >
+    <!-- Personal Information Section -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="full_name">Full Name</label>
+          <input required type="text" class="form-control" id="full_name" name="full_name" required placeholder="Enter your full name">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input required type="date" class="form-control" id="dob" name="dob" required>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Information Section -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input required type="tel" class="form-control" id="phone" name="phone" required placeholder="Enter phone number">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input required type="email" class="form-control" id="email" name="email" required placeholder="Enter email address">
+        </div>
+      </div>
+    </div>
+
+    <!-- Address Section -->
+    <div class="form-group">
+      <label for="address">Address</label>
+      <textarea class="form-control" id="address" name="address" required rows="3" placeholder="Enter your address"></textarea>
+    </div>
+
+    <!-- Parent/Guardian Information Section -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="parent_name">Parent/Guardian Name</label>
+          <input required type="text" class="form-control" id="parent_name" name="parent_name" required placeholder="Enter parent's name">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="parent_phone">Parent/Guardian Phone</label>
+          <input required type="tel" class="form-control" id="parent_phone" name="parent_phone" required placeholder="Enter parent's phone number">
+        </div>
+      </div>
+    </div>
+
+    <!-- Education Details Section -->
+    <div class="form-group">
+      <label for="previous_school">Previous School</label>
+      <input required type="text" class="form-control" id="previous_school" name="previous_school" required placeholder="Enter previous school name">
+    </div>
+    <div class="form-group">
+      <label for="grade_applying">Grade Applying For</label>
+      <input required type="text" class="form-control" id="grade_applying" name="grade_applying" required placeholder="Enter grade you are applying for">
+    </div>
+
+    <!-- Additional Comments Section -->
+    <div class="form-group">
+      <label for="comments">Additional Comments</label>
+      <textarea class="form-control" id="comments" name="comments" rows="4" placeholder="Any additional information or special requirements"></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-group text-center my-4">
+      <button required type="submit" class="btn btn-success btn-lg w-25 alert alert-primary">Submit Application</button>
+    </div>
+  </form>
+</div>
+<!-- Admission Form End -->
+
 
     <!-- slider end -->
 

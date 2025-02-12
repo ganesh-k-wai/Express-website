@@ -1,20 +1,76 @@
 * {
   margin: 0;
   padding: 0;
+  
 }
+/* header start  */
 
 .navbar-collapse ul li a:hover {
-  color: red !important;
+  color: white !important;
+  background-color: black;
+  border-radius: 5px;
 }
 
-.footer {
-  height: 250px;
-  width: 100%;
-  background-color: black;
-  color: white;
-  display: flex;
-  flex-direction: row;
+.homename {
+    background-color: rgb(251, 191, 36);
+        border-radius:20px 20px 20px 20px ;
+      border: 3px solid rgb(88, 87, 87);
+      /* padding: 5px; */
+
+
 }
+
+/* common css start */
+
+.contactname h1{
+    background-color: rgb(251, 191, 36);
+    border-radius:2px 25px 2% 25px;
+    border: 3px solid rgb(88, 87, 87);
+}
+
+/* common css end */
+
+
+
+/* header end  */
+
+/* about start */
+
+
+
+
+/* about end  */
+
+
+
+
+
+/* -----------con start------------ */
+
+.contact .col-md-6{
+
+  outline: 5px solid red;
+
+}
+
+
+
+
+
+
+
+/* -----------con end------------ */
+
+
+
+
+
+
+
+
+
+/* footer start */
+
 
 .footername p {
   font-weight: 500;
@@ -24,3 +80,8 @@
 .footerli ul {
   margin: 40px 20px;
 }
+
+
+
+
+/* footer end  */
