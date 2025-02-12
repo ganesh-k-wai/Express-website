@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-collapse ul li a:hover {
+  color: red !important;
+}
+
+.footer {
+  height: 250px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+.footername p {
+  font-weight: 500;
+  font-size: 40px;
+}
+
+.footerli ul {
+  margin: 40px 20px;
+}

@@ -13,10 +13,10 @@ app.get('/gallery',function(req,res){
     res.render("gallery.ejs")
 })
 app.get('/contact', function (req, res) {
-    res.send("contact.ejs")
+    res.render("contact.ejs")
 })
 app.get('/admission', function (req, res) {
-    res.send("admission.ejs")
+    res.render("admission.ejs")
 })
 
 
