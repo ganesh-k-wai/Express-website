@@ -4,15 +4,20 @@ const app = express()
 
 
 app.get('/', function (req, res) {
-    res.send("hello world...!");
+    res.render("home.ejs");
 })
 app.get('/about',function(req,res){
-    res.render("/about.ejs")
+    res.render("about.ejs")
 })
 app.get('/gallery',function(req,res){
-    res.render("/gallery.ejs")
+    res.render("gallery.ejs")
 })
-
+app.get('/contact', function (req, res) {
+    res.send("contact.ejs")
+})
+app.get('/admission', function (req, res) {
+    res.send("admission.ejs")
+})
 
 
 
