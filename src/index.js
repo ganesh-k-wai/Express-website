@@ -2,12 +2,18 @@ const express = require("express")
 const app = express()
 const bodyparser = require("body-parser")
 app.use(bodyparser.urlencoded({ extended: true }));
+const path = require("path");
+app.set('views', path.join(__dirname, 'views'));  // Ensure the path to the views folder is correct
+app.set('view engine', 'ejs');
 
 
 app.use(express.static("public/"));
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.get('/', function (req, res) {
     res.render("home.ejs");
+    // res.send("hellow wo")
 })
 app.get('/about',function(req,res){
     res.render("about.ejs")
