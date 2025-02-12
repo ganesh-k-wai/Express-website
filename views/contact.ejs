@@ -83,21 +83,24 @@
             </h3>
           </div>
 
+          <form action="https://formbold.com/s/oaGY4" method="POST">
           <div class="d-flex justify-content-center mb-3">
             <input
               type="text"
               id="name"
               placeholder="Name"
               class="form-control w-50 text-center"
+              name="p_name"
             />
           </div>
-
+            <input type="text" id="id">
           <div class="d-flex justify-content-center mb-3">
             <input
               type="number"
               id="name"
               placeholder="Mobile Number"
               class="form-control w-50 text-center"
+              name="p_mobile"
             />
           </div>
           <div class="d-flex justify-content-center mb-3">
@@ -106,33 +109,43 @@
               id="name"
               placeholder="Email ID"
               class="form-control w-50 text-center"
+              name="p_email"
             />
           </div>
           <div class="d-flex justify-content-center mb-3">
             <textarea
-              name=""
+              
               id=""
               rows=""
               class="form-control w-50 text-center"
               placeholder="Address"
+              name="p_address"
             ></textarea>
           </div>
           <div class="d-flex justify-content-center mb-3">
             <textarea
-              name=""
+              name="p_comment"
               id=""
               rows=""
               class="form-control w-50 text-center"
               placeholder="Short Comment"
+
             ></textarea>
           </div>
 
           <div class="text-center mb-5">
-            <button class="btn btn-outline-primary btn-md w-50">Save</button>
+            <button class="btn btn-outline-primary btn-md w-50" onclick="thanks()">Save</button>
           </div>
+
+          </form>
         </div>
       </div>
     </div>
+    <script>
+      function thanks (){
+        alert('Thanks For Contacting us... From Nन्हे')
+      }
+    </script>
 
     <!-- contact end -->
 
