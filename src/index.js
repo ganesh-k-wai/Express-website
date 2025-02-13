@@ -43,18 +43,25 @@ app.post("/submit", function (req, res) {
     secure: false, // true for port 465, false for other ports
     auth: {
       user: "kadamg367637@gmail.com",
-      pass: "ganesh.kadam",
+      pass: "Ganpat@#2227",
       },
       logger: true,
       debug:true,
   });
+    transporter.verify((error, success) => {
+  if (error) {
+    console.log("SMTP Server Error:", error);
+  } else {
+    console.log("SMTP Server is ready to take messages");
+  }
+});
 
   // Function to send email
   async function sendEmail() {
     try {
       const info = await transporter.sendMail({
         from: '"Ganesh Suresh Kadam" <kadamg367637@gmail.com>', // Sender address
-        to: "ganeshkadam@aca.edu.in", // Receiver address (can be dynamic based on the form)
+        to: "kadamg2227@gmail.com", // Receiver address (can be dynamic based on the form)
         subject: "New Contact Form Submission", // Subject line
         text: `You have a new submission from ${req.body.p_name}. Here's the message: ${req.body.message}`, // Text body with form data
         html: `<b>You have a new submission from ${req.body.p_name}.</b><br><p>${req.body.email}</p><br><p>${req.body.p_mobile}</p><br><p>${req.body.p_address}</p>`, // HTML body
@@ -73,5 +80,5 @@ app.post("/submit", function (req, res) {
 
 
 app.listen(3001, function (req, res) {
-    console.log("Connected to PORT:3000")
+    console.log("Connected to PORT:3001")
 })  
