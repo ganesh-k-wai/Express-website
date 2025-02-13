@@ -67,7 +67,7 @@ app.post("/submit", function (req, res) {
         html: `
           <div style="font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px; border-radius: 10px;">
             <div style="background-color: #4CAF50; padding: 15px; border-radius: 10px 10px 0 0; text-align: center; color: white;">
-            <img src="../images/school_logo.png" height="30px" width="30px" alt="Nन्हे">
+            <img src="https://github.com/ganesh-k-wai/Express-website/blob/main/src/public/images/school_logo.png" height="30px" width="30px" alt="Nन्हे">
               <h2>Welcome to Our Pre-School Program!</h2>
             </div>
             <div style="padding: 20px;">
