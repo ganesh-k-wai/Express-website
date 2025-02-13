@@ -44,39 +44,76 @@ app.post("/submit", function (req, res) {
     auth: {
       user: "kadamg367637@gmail.com",
       pass: "uyod yiyi wylr ftrx",
-      },
-      logger: true,
-      debug:true,
+    },
+    logger: true,
+    debug: true,
   });
-    transporter.verify((error, success) => {
-  if (error) {
-    console.log("SMTP Server Error:", error);
-  } else {
-    console.log("SMTP Server is ready to take messages");
-  }
-});
+
+  transporter.verify((error, success) => {
+    if (error) {
+      console.log("SMTP Server Error:", error);
+    } else {
+      console.log("SMTP Server is ready to take messages");
+    }
+  });
 
   // Function to send email
   async function sendEmail() {
     try {
       const info = await transporter.sendMail({
         from: '"Ganesh Suresh Kadam" <kadamg367637@gmail.com>', // Sender address
-        to: "kadamg2227@gmail.com", // Receiver address (can be dynamic based on the form)
-        subject: "New Contact Form Submission", // Subject line
-        text: `You have a new submission from ${req.body.p_name}. Here's the message: ${req.body.message}`, // Text body with form data
-        html: `<b>You have a new submission from ${req.body.p_name}.</b><br><p>${req.body.email}</p><br><p>${req.body.p_mobile}</p><br><p>${req.body.p_address}</p>`, // HTML body
+        to: req.body.email, // Send to the applicant's email
+        subject: "Thank You for Registering! - After School Program", // Subject line
+        html: `
+          <div style="font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px; border-radius: 10px;">
+            <div style="background-color: #4CAF50; padding: 15px; border-radius: 10px 10px 0 0; text-align: center; color: white;">
+              <h2>Welcome to Our After-School Program!</h2>
+            </div>
+            <div style="padding: 20px;">
+              <p>Dear <b>${req.body.p_name}</b>,</p>
+              <p>Thank you for registering for our After-School Program. We are thrilled to have you join us!</p>
+              <p><b>Details Provided:</b></p>
+              <ul>
+                <li><b>Email:</b> ${req.body.email}</li>
+                <li><b>Mobile:</b> ${req.body.p_mobile}</li>
+                <li><b>Address:</b> ${req.body.p_address}</li>
+              </ul>
+              <p>Our team will reach out to you soon with further details.</p>
+              <p>We look forward to an exciting journey together!</p>
+              <p>Best Regards,</p>
+              <p><b>After-School Program Team</b></p>
+            </div>
+            <div style="background-color: #4CAF50; padding: 10px; border-radius: 0 0 10px 10px; text-align: center; color: white;">
+              <p>Contact Us: <a href="mailto:support@afterschool.com" style="color: white;">support@afterschool.com</a></p>
+            </div>
+          </div>
+        `,
       });
 
       console.log("Message sent: %s", info.messageId);
-      res.send("Email sent successfully!");
+      
+      // Redirect to /contact with an alert
+      res.send(`
+        <script>
+          alert("Form submitted successfully! Please check your email.");
+          window.location.href = "/contact";
+        </script>
+      `);
     } catch (error) {
       console.error("Error sending email:", error);
-      res.status(500).send("Failed to send email.");
+      res.status(500).send(`
+        <script>
+          alert("Failed to send email. Please try again.");
+          window.location.href = "/contact";
+        </script>
+      `);
     }
   }
 
   sendEmail();
 });
+
+
 
 
 app.listen(3001, function (req, res) {
