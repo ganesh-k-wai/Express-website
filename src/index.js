@@ -43,7 +43,7 @@ app.post("/submit", function (req, res) {
     secure: false, // true for port 465, false for other ports
     auth: {
       user: "kadamg367637@gmail.com",
-      pass: "Ganpat@#2227",
+      pass: "uyod yiyi wylr ftrx",
       },
       logger: true,
       debug:true,
