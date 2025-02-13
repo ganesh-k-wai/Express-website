@@ -38,21 +38,23 @@ app.post("/submit", function (req, res) {
 
   // Nodemailer setup
   const transporter = nodemailer.createTransport({
-    host: "smtp.ethereal.email",
+    host: "smtp.gmail.com",
     port: 587,
     secure: false, // true for port 465, false for other ports
     auth: {
-      user: "ganesh.kadam@waiin.com",
+      user: "kadamg367637@gmail.com",
       pass: "ganesh.kadam",
-    },
+      },
+      logger: true,
+      debug:true,
   });
 
   // Function to send email
   async function sendEmail() {
     try {
       const info = await transporter.sendMail({
-        from: '"Ganesh Suresh Kadam" <ganesh.kadam@waiin.com>', // Sender address
-        to: "tejas.borate@waiin.com,nilesh.medhe@waiin.com,piyush.joshi@waiin.com,harshvardhan.gunjal@waiin.com,om.ghungarde.com", // Receiver address (can be dynamic based on the form)
+        from: '"Ganesh Suresh Kadam" <kadamg367637@gmail.com>', // Sender address
+        to: "ganeshkadam@aca.edu.in", // Receiver address (can be dynamic based on the form)
         subject: "New Contact Form Submission", // Subject line
         text: `You have a new submission from ${req.body.p_name}. Here's the message: ${req.body.message}`, // Text body with form data
         html: `<b>You have a new submission from ${req.body.p_name}.</b><br><p>${req.body.email}</p><br><p>${req.body.p_mobile}</p><br><p>${req.body.p_address}</p>`, // HTML body
