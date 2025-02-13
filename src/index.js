@@ -43,7 +43,7 @@ app.post("/submit", function (req, res) {
     secure: false, // true for port 465, false for other ports
     auth: {
       user: "kadamg367637@gmail.com",
-      pass: "uyod yiyi wylr ftrx",
+      pass: "xvpr pthr ojal zifu",
     },
     logger: true,
     debug: true,
@@ -62,29 +62,31 @@ app.post("/submit", function (req, res) {
     try {
       const info = await transporter.sendMail({
         from: '"Ganesh Suresh Kadam" <kadamg367637@gmail.com>', // Sender address
-        to: req.body.email, // Send to the applicant's email
+        to: req.body.p_email, // Send to the applicant's email
         subject: "Thank You for Registering! - After School Program", // Subject line
         html: `
           <div style="font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px; border-radius: 10px;">
             <div style="background-color: #4CAF50; padding: 15px; border-radius: 10px 10px 0 0; text-align: center; color: white;">
-              <h2>Welcome to Our After-School Program!</h2>
+            <img src="/images/school_logo.png" height="30px" width="30px" alt="Nन्हे">
+              <h2>Welcome to Our Pre-School Program!</h2>
             </div>
             <div style="padding: 20px;">
               <p>Dear <b>${req.body.p_name}</b>,</p>
               <p>Thank you for registering for our After-School Program. We are thrilled to have you join us!</p>
               <p><b>Details Provided:</b></p>
               <ul>
-                <li><b>Email:</b> ${req.body.email}</li>
+                <li><b>Email:</b> ${req.body.p_email}</li>
                 <li><b>Mobile:</b> ${req.body.p_mobile}</li>
                 <li><b>Address:</b> ${req.body.p_address}</li>
+                <li><b>Address:</b> Your Application Number is <u>NEMS0002</u> </li>
               </ul>
               <p>Our team will reach out to you soon with further details.</p>
               <p>We look forward to an exciting journey together!</p>
               <p>Best Regards,</p>
-              <p><b>After-School Program Team</b></p>
+              <p><b>Nन्हे English Medium School</b></p>
             </div>
             <div style="background-color: #4CAF50; padding: 10px; border-radius: 0 0 10px 10px; text-align: center; color: white;">
-              <p>Contact Us: <a href="mailto:support@afterschool.com" style="color: white;">support@afterschool.com</a></p>
+              <p>Contact Us: <a href="mailto:support@afterschool.com" style="color: white;">support@Nन्हे.com</a></p>
             </div>
           </div>
         `,
