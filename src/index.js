@@ -10,6 +10,8 @@ app.set('view engine', 'ejs');
 app.use(express.static("public/"));
 app.use(express.static(path.join(__dirname, 'public')));
 
+const nodemailer = require("nodemailer");
+
 
 app.get('/', function (req, res) {
     res.render("home.ejs");
@@ -28,12 +30,44 @@ app.get('/admission', function (req, res) {
     res.render("admission.ejs")
 })
 
-app.post('/submit', function (req, res) {
-    console.log(req.body)
 
 
-})
 
+app.post("/submit", function (req, res) {
+  console.log(req.body); // Log the form data to the console
+
+  // Nodemailer setup
+  const transporter = nodemailer.createTransport({
+    host: "smtp.ethereal.email",
+    port: 587,
+    secure: false, // true for port 465, false for other ports
+    auth: {
+      user: "ganesh.kadam@waiin.com",
+      pass: "ganesh.kadam",
+    },
+  });
+
+  // Function to send email
+  async function sendEmail() {
+    try {
+      const info = await transporter.sendMail({
+        from: '"Ganesh Suresh Kadam" <ganesh.kadam@waiin.com>', // Sender address
+        to: "tejas.borate@waiin.com,nilesh.medhe@waiin.com,piyush.joshi@waiin.com,harshvardhan.gunjal@waiin.com,om.ghungarde.com", // Receiver address (can be dynamic based on the form)
+        subject: "New Contact Form Submission", // Subject line
+        text: `You have a new submission from ${req.body.p_name}. Here's the message: ${req.body.message}`, // Text body with form data
+        html: `<b>You have a new submission from ${req.body.p_name}.</b><br><p>${req.body.email}</p><br><p>${req.body.p_mobile}</p><br><p>${req.body.p_address}</p>`, // HTML body
+      });
+
+      console.log("Message sent: %s", info.messageId);
+      res.send("Email sent successfully!");
+    } catch (error) {
+      console.error("Error sending email:", error);
+      res.status(500).send("Failed to send email.");
+    }
+  }
+
+  sendEmail();
+});
 
 
 app.listen(3001, function (req, res) {
